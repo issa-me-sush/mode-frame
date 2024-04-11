@@ -65,6 +65,36 @@ app.frame('/', (c) => {
     ],
   })
 })
+app.frame('/trx/:hash', async (c) => {
+  const { hash } = c.req.param();
+
+  // Fetch transaction details using the provided hash
+  const response = await fetch(`https://sepolia.explorer.mode.network/api/v2/transactions/${hash}`);
+  if (!response.ok) {
+   
+    return c.res({
+      image: (
+        <div style={{ color: 'red', fontSize: '20px' }}>
+          Error fetching transaction details.
+        </div>
+      ),
+    });
+  }
+  const transaction = await response.json();
+
+
+  return c.res({
+    image: (
+      <div style={{ color: 'white', display: 'flex', fontSize: '20px', flexDirection: 'column', padding: '20px' }}>
+        
+        <div>Transaction Hash: {transaction.hash}</div>
+        <div>Status: {transaction.status}</div>
+        <div>Gas Used: {transaction.gas_used}</div>
+      
+      </div>
+    ),
+  });
+});
 
 devtools(app, { serveStatic })
 
