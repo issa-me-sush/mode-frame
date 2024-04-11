@@ -20,6 +20,9 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.2.0(react@18.2.0)
+  viem:
+    specifier: ^2.9.16
+    version: 2.9.16(typescript@5.4.5)
 
 devDependencies:
   '@types/node':
@@ -1611,7 +1614,7 @@ packages:
       path-browserify: 1.0.1
       typescript: 5.4.5
       valibot: 0.30.0
-      viem: 2.9.15(typescript@5.4.5)
+      viem: 2.9.16(typescript@5.4.5)
       vite: 5.2.8(@types/node@20.12.7)
     transitivePeerDependencies:
       - '@types/node'
@@ -2764,8 +2767,8 @@ packages:
       - supports-color
     dev: true
 
-  /viem@2.9.15(typescript@5.4.5):
-    resolution: {integrity: sha512-7kcmHqybc3JhpjL8gKY7YxBYpZt1//qhoTZIU5Ez9JdyRCnYMMnJu20s7wd7Gv6a3zPbq8jV8dCp94a/NLJJcA==}
+  /viem@2.9.16(typescript@5.4.5):
+    resolution: {integrity: sha512-FQRfN4G7uKEUs5DYvVrH/kZmTkwcSDpTBxnadpwG1EEP8nHm57WDpSaGN7PwSPVgJ6rMo5MENT5hgnqaNTlb2w==}
     peerDependencies:
       typescript: '>=5.0.4'
     peerDependenciesMeta:
