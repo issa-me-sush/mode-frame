@@ -71,31 +71,27 @@ app.frame('/trx/:hash', async (c) => {
   // Fetch transaction details using the provided hash
   const response = await fetch(`https://sepolia.explorer.mode.network/api/v2/transactions/${hash}`);
   if (!response.ok) {
-   
+    // Return an error message or image
     return c.res({
-      image: (
-        <div style={{ color: 'red', fontSize: '20px' }}>
-          Error fetching transaction details.
-        </div>
-      ),
+      image: 'https://img.freepik.com/free-psd/3d-rendering-ui-icon_23-2149182289.jpg?w=1380&t=st=1712820858~exp=1712821458~hmac=a40ebfce8a9435e8d31e1e5c4d75c2209ec87c53f7deadd8c42e84b0a8c17c96',
     });
   }
   const transaction = await response.json();
 
-
+  
   return c.res({
     image: (
-      <div style={{ color: 'white', display: 'flex', fontSize: '20px', flexDirection: 'column', padding: '20px' }}>
-        
+      <div style={{ color: 'white', display: 'flex', flexDirection: 'column', fontSize: '20px', padding: '20px', justifyContent: 'center', alignItems: 'center' }}>
         <div>Transaction Hash: {transaction.hash}</div>
         <div>Status: {transaction.status}</div>
         <div>Gas Used: {transaction.gas_used}</div>
-      
+  
       </div>
     ),
+   
+   
   });
 });
-
 devtools(app, { serveStatic })
 
 export const GET = handle(app)
