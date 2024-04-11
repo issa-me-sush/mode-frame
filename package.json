@@ -1,28 +1,26 @@
 {
-  "name": "my-project",
-  "version": "0.1.0",
+  "name": "template-next",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
+    "deploy": "vercel",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "frames.js": "^0.12.1",
-    "next": "14.1.4",
+    "frog": "latest",
+    "hono": "^4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "next": "14.1.0"
   },
   "devDependencies": {
+    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.4",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "vercel": "^32.4.1"
   }
 }
