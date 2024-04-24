@@ -101,7 +101,7 @@ app.frame('/trx/:hash', async (c) => {
             marginTop: '10px',
             padding: '0 120px',
             whiteSpace: 'pre-wrap',
- }}>Hash: {transaction.hash}</div>
+ }}>Hash: {transaction.hash?transaction.hash:"not available"}</div>
       <div style={{ 
             display: 'flex',
             flexDirection: 'column',
@@ -115,7 +115,7 @@ app.frame('/trx/:hash', async (c) => {
             marginTop: '10px',
             padding: '0 120px',
             whiteSpace: 'pre-wrap',
- }}>Status: {transaction.status}</div>
+ }}>Status: {transaction.status?transaction.status:"not available"}</div>
       <div style={{ 
             display: 'flex',
             flexDirection: 'column',
@@ -129,7 +129,7 @@ app.frame('/trx/:hash', async (c) => {
             marginTop: '10px',
             padding: '0 120px',
             whiteSpace: 'pre-wrap',
- }}>Block: {transaction.block}</div>
+ }}>Block: {transaction.block?transaction.block:"not available"}</div>
       <div style={{ 
             display: 'flex',
             flexDirection: 'column',
@@ -143,7 +143,7 @@ app.frame('/trx/:hash', async (c) => {
             marginTop: '10px',
             padding: '0 120px',
             whiteSpace: 'pre-wrap',
- }}>From: {transaction.from.hash}</div>
+ }}>From: {transaction.from.hash?transaction.from.hash:"not available"}</div>
       <div style={{ 
             display: 'flex',
             flexDirection: 'column',
@@ -157,7 +157,7 @@ app.frame('/trx/:hash', async (c) => {
             marginTop: '10px',
             padding: '0 120px',
             whiteSpace: 'pre-wrap',
- }}>To: {transaction.to.hash}</div>
+ }}>To: {transaction.to.hash?transaction.to.hash:"not available"}</div>
       <div style={{ 
             display: 'flex',
             flexDirection: 'column',
@@ -171,7 +171,7 @@ app.frame('/trx/:hash', async (c) => {
             marginTop: '10px',
             padding: '0 120px',
             whiteSpace: 'pre-wrap',
- }}>Fee: {transaction.fee.value} wei</div>
+ }}>Fee: {transaction.fee.value?transaction.fee.value:"not available"} wei</div>
       <div style={{ 
             display: 'flex',
             flexDirection: 'column',
@@ -185,7 +185,7 @@ app.frame('/trx/:hash', async (c) => {
             marginTop: '10px',
             padding: '0 120px',
             whiteSpace: 'pre-wrap',
- }}>Method: {transaction.method}</div>
+ }}>Method: {transaction.method?transaction.method:"not available"}</div>
       {transaction.value && <div style={{ 
             display: 'flex',
             flexDirection: 'column',
@@ -199,7 +199,7 @@ app.frame('/trx/:hash', async (c) => {
             marginTop: '10px',
             padding: '0 120px',
             whiteSpace: 'pre-wrap',
- }}>Value: {transaction.value} wei</div>}
+ }}>Value: {transaction.value?transaction.value:"not available"} wei</div>}
       <div style={{ 
             display: 'flex',
             flexDirection: 'column',
@@ -213,7 +213,7 @@ app.frame('/trx/:hash', async (c) => {
             marginTop: '10px',
             padding: '0 120px',
             whiteSpace: 'pre-wrap',
- }}>Confirmations: {transaction.confirmations}</div>
+ }}>Confirmations: {transaction.confirmations?transaction.confirmations:"not available"}</div>
   
     </div>
     ),
